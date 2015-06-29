@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Tools.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface StartupViewController : UIViewController {
     
-    
+    CLLocationManager *request;
     __weak IBOutlet UIButton *signup;
     __weak IBOutlet UIButton *signin;
     

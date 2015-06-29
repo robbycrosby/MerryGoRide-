@@ -28,6 +28,10 @@
     button.layer.cornerRadius = radius;
     button.clipsToBounds = true;
 }
++(void)roundimage:(UIImageView *)button :(CGFloat)radius {
+    button.layer.cornerRadius = radius;
+    button.clipsToBounds = true;
+}
 +(void)roundlabel:(UILabel *)label :(CGFloat)radius {
     label.layer.cornerRadius = radius;
     label.clipsToBounds = true;
@@ -51,14 +55,14 @@
 +(void)bigshadow:(UILabel *)label{
     label.layer.masksToBounds = NO;
     label.layer.cornerRadius = 8; // if you like rounded corners
-    label.layer.shadowOffset = CGSizeMake(1, 20);
+    label.layer.shadowOffset = CGSizeMake(0, 60);
     label.layer.shadowRadius = 5;
-    label.layer.shadowOpacity = 0.25;
+    label.layer.shadowOpacity = 0.17;
 }
 
 +(void)applyblur:(UIView*)view :(UIBlurEffectStyle)blur{
     UIVisualEffect *blurEffect;
-    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    blurEffect = [UIBlurEffect effectWithStyle:blur];
     
     UIVisualEffectView *visualEffectView;
     visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];

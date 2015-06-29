@@ -8,10 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import "Tools.h"
+#import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
+#import <CoreLocation/CoreLocation.h>
+#import "RKDropDownAlert.h"
+#import "CustomIOSAlertView.h"
+#import "CheckoutViewController.h"
+#import "AddressBookTableViewCell.h"
 
-@interface ScheduleViewController : UIViewController {
+@interface ScheduleViewController : UIViewController <UISearchBarDelegate,CustomIOSAlertViewDelegate,UITableViewDataSource,UITableViewDelegate>{
+    NSMutableArray *annotations;
     UIDatePicker *dateselect;
     NSDate *pdate;
+    double startlat,startlon,endlat,endlon;
+    NSNumber *miles,*calccost;
+    UIAlertView *processing;
+    NSString *start,*end;
+    double ridersamount;
+    double riders;
+    double milesa,milesb;
+    CustomIOSAlertView *ridedate;
+    NSString *ridedatestring;
+    CLPlacemark *startloc,*endloc;
+    NSArray *address;
 }
 - (IBAction)cancel:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *menu;
@@ -19,32 +38,15 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIButton *back;
 - (IBAction)back:(id)sender;
+@property (weak, nonatomic) IBOutlet MKMapView *pickup_map;
+@property (weak, nonatomic) IBOutlet UISearchBar *pickup_add;
+- (IBAction)destination:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *checkout;
+- (IBAction)checkout:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextbutton;
+@property (weak, nonatomic) IBOutlet UIButton *addressbook;
+- (IBAction)instertaddress:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
-
-// Fields (Names)
-@property (weak, nonatomic) IBOutlet UITextField *p1;
-@property (weak, nonatomic) IBOutlet UITextField *p2;
-@property (weak, nonatomic) IBOutlet UITextField *p3;
-@property (weak, nonatomic) IBOutlet UITextField *p4;
-@property (weak, nonatomic) IBOutlet UITextField *p5;
-
-// Fields (Addresses)
-@property (weak, nonatomic) IBOutlet UITextField *pickupaddress;
-@property (weak, nonatomic) IBOutlet UITextField *pickupcity;
-@property (weak, nonatomic) IBOutlet UITextField *pickupstate;
-@property (weak, nonatomic) IBOutlet UITextField *pickupzip;
-@property (weak, nonatomic) IBOutlet UITextField *destinationaddress;
-@property (weak, nonatomic) IBOutlet UITextField *destinationcity;
-@property (weak, nonatomic) IBOutlet UITextField *destinationstate;
-@property (weak, nonatomic) IBOutlet UITextField *destinationzip;
-@property (weak, nonatomic) IBOutlet UITextField *pickupname;
-@property (weak, nonatomic) IBOutlet UITextField *destinationname;
-@property (weak, nonatomic) IBOutlet UITextField *pickuptime;
-@property (strong,nonatomic) UIDatePicker *datePicker;
-- (IBAction)confirm:(id)sender;
-- (IBAction)setpickup:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *setdate;
-@property (weak, nonatomic) IBOutlet UIButton *ridedone;
-- (IBAction)ridedone:(id)sender;
 
 @end

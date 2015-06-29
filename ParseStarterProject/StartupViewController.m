@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [Tools roundbutton:signin :6.0f];
     [Tools roundbutton:signup :6.0f];
+    [request requestWhenInUseAuthorization];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

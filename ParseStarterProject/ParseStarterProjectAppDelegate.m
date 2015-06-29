@@ -22,10 +22,14 @@
 #pragma mark -
 #pragma mark UIApplicationDelegate
 
+NSString * const StripePublishableKey = @"pk_test_4oUsOKuAk24oT5uAkEKesvvN";
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    // This can be found at https://dashboard.stripe.com/account/apikeys // TODO: replace nil with your own value
+
     [Parse setApplicationId:@"GAXctE7sjKBsc12tCCLtDfak5LrTujzdW6KDnHSQ"
                   clientKey:@"vasD6pOAHHAZ6jacFVyDCMJZMssBvSe8oEUJBR6p"];
+    [Stripe setDefaultPublishableKey:StripePublishableKey];
     [[NSUserDefaults standardUserDefaults] setObject:@"robcrosby" forKey:@"username"];
     return YES;
 }

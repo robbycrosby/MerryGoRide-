@@ -5,6 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Stripe.h"
 
 @class ParseStarterProjectViewController;
 

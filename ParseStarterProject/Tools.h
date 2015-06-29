@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/Quartzcore.h>
 #import <Parse/Parse.h>
-#import "BFPaperButton.h"
-#import "UIColor+BFPaperColors.h"
 
 
 @interface Tools : UIViewController
 
 +(void)roundbutton:(UIButton*)button :(CGFloat)radius;
 +(void)roundlabel:(UILabel*)label :(CGFloat)radius;
++(void)roundimage:(UIImageView*)label :(CGFloat)radius;
 +(void)shadowbutton:(UIButton*)button;
 +(void)shadowlabel:(UILabel*)label;
 +(void)bigshadow:(UILabel*)label;
